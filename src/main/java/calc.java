@@ -1,43 +1,6 @@
 public class calc {
     static boolean romeMode = false;
 
-    public static String calculate(String input) throws Exception {
-        String[] elements = input.split(" ");
-
-        int result = 0;
-        int x1;
-        int x2;
-        if (elements.length != 3) throw new Exception("Вы ввели неверное выражение");
-
-
-        if (isRomeNumbers(elements[0], elements[2])) {
-            x1 = changeToArabic(elements[0]);
-            x2 = changeToArabic(elements[2]);
-        } else if (isOurArabicNumbers(elements[0], elements[2])) {
-            x1 = Integer.parseInt(elements[0]);
-            x2 = Integer.parseInt(elements[2]);
-        } else
-            throw new Exception("Вы ввели не числа.");
-        if (isOperation(elements[1])) {
-            switch (elements[1]) {
-                case "+" -> result = x1 + x2;
-                case "-" -> result = x1 - x2;
-                case "*" -> result = x1 * x2;
-                case "/" -> result = x1 / x2;
-            }
-        }
-        if (romeMode) {
-            if (result > 0) {
-                return convertToRome.getNumber(result);
-            } else {
-                throw new Exception("В римской системе результат не может быть 0 или отрицательным.");
-            }
-        }
-
-        return String.valueOf(result);
-    }
-
-
     public static boolean isOurArabicNumbers(String str1, String str2) throws Exception {
         int m1 = Integer.parseInt(str1);
         int m2 = Integer.parseInt(str2);
