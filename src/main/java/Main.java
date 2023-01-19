@@ -5,10 +5,10 @@ class Main {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         String equation = scanner.nextLine();
-        System.out.println(calculate(equation));
+        System.out.println(calc(equation));
     }
 
-    public static String calculate(String input) throws Exception {
+    public static String calc(String input) throws Exception {
         String[] elements = input.split(" ");
 
         int result = 0;
